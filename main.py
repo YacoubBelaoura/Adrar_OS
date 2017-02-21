@@ -2,16 +2,15 @@
    Start of duplicate project of AdrarOs With Python Programing Language
 """
 import sys
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtQuick import QQuickView
+
+from PyQt5.QtGui import QGuiApplication
 from PyQt5.QtCore import QUrl
+from PyQt5.QtQml import QQmlApplicationEngine
 
-if __name__ == '__main__' :
-    myApp = QApplication(sys.argv)
-    appQml = QQuickView()
-    appQml.setSource(QUrl("main.qml"))
-    appQml.show()
-    myApp.exec_()
-    sys.exit 
-
-
+if __name__ == '__main__':
+    MYAPP = QGuiApplication(sys.argv)
+    APPROOT = QQmlApplicationEngine()
+    APPROOT.load(QUrl("DialogC.qml"))
+    WIN = APPROOT.rootObjects()[0]
+    WIN.show()
+    sys.exit(MYAPP.exec_())
