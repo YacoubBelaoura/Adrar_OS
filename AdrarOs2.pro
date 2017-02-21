@@ -1,4 +1,5 @@
 QT += qml quick
+QT += webengine
 
 CONFIG += c++11
 
